@@ -1,6 +1,8 @@
 package com.incluit.springapp.web;
 
 
+/*import com.incluit.springapp.web.controllers.HelloController;*/
+import com.incluit.springapp.web.controllers.HelloController;
 import org.junit.Test;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -16,7 +18,7 @@ public class HelloControllerTest {
     public void testHandleRequestView() throws Exception{
         HelloController controller = new HelloController();
         ModelAndView modelAndView = controller.handleRequest(null, null);
-        assertEquals("index.jsp", modelAndView.getViewName());
+        assertEquals("hello", modelAndView.getViewName());
     }
 
 }

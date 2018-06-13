@@ -1,4 +1,4 @@
-package com.incluit.springapp.web;
+package com.incluit.springapp.web.controllers;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -18,11 +18,13 @@ import java.io.IOException;
 public class HelloController {
 
     protected final Log logger = LogFactory.getLog(getClass());
-    @RequestMapping(value="/")
-    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    @RequestMapping(value="/hello")
+    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
         logger.info("Returning hello view");
-        return new ModelAndView("index.jsp");
+        return new ModelAndView("hello");
     }
+
+
+
 
 }
