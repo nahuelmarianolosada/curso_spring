@@ -90,11 +90,11 @@
 
     function deleteStudent(id){
         $.ajax({
-            url: "http://localhost:8080/pruebas/student/" + id,
+            url: "http://localhost:8080/pruebas/student/delete/" + id,
             type: 'DELETE',
 
             success: function(result) {
-                // Do something with the result
+                window.location.replace("${contextPath}/student");
             }
         });
     }

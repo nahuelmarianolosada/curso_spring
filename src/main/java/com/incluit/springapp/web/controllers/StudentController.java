@@ -95,6 +95,7 @@ public class StudentController {
             throw new NullPointerException();
         }
 
+
         response.sendRedirect( request.getContextPath() + "/student");
     }
 
@@ -102,10 +103,11 @@ public class StudentController {
 
     @RequestMapping(value = "/delete/{idStudent}", method = RequestMethod.DELETE)
     public void delete(@PathVariable int idStudent,HttpServletRequest request, HttpServletResponse response){
-        studentService.delete(idStudent);
         try {
-            response.sendRedirect( request.getContextPath() + "/student");
-        } catch (IOException e) {
+            studentService.delete(idStudent);
+            response.setStatus(200);
+        } catch (Exception e) {
+            response.setStatus(404);
             e.printStackTrace();
         }
     }
